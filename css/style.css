@@ -1,0 +1,130 @@
+body {
+  /* font-family: 'Kaushan Script', cursive !important; */
+  /* font-family: 'Pacifico', cursive !important; */
+  font-family: 'Caveat', cursive !important;
+  letter-spacing: 1px;
+  background-color: #e0e0e0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.card-body {
+  padding: 10px 0px !important;
+}
+
+footer div {
+  letter-spacing: 3px;
+}
+
+.letter-spacing {
+  letter-spacing: 3px;
+}
+
+.cd {
+  height: 400px;
+  width: 400px;
+  box-shadow: 3px 3px 21px 8px #cfc9c9;
+  border-radius: 15%;
+  background-color: #e0e0e0;
+}
+
+.defaultCss {
+  height: 25rem;
+  width: 25rem;
+  box-shadow: 0px 0px 25px 0px #947f7f;
+  background-color: #e0e0e0;
+  border-radius: 30%;
+}
+
+input[type="color"] {
+  /* display: none; */
+  -webkit-appearance: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0px auto;
+  /* text-align: center; */
+  /* display: flex; */
+  /* align-items: center; */
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: none;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none border-radius:50%;
+  overflow: hidden;
+  border: none;
+}
+
+#toolCard::-webkit-scrollbar {
+  width: 15px;
+}
+
+#toolCard::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#toolCard::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+#toolCard::-webkit-scrollbar-thumb:hover {
+  background-color: #b8bbbf;
+}
+
+#toolCard::-webkit-scrollbar-button {
+  /* background-color: #d6dee1;
+  border-radius: 20px; */
+  /* border: 6px solid black; */
+  /* background-clip: content-box; */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  cursor: pointer;
+  border: 3px solid #1266f1;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  cursor: pointer;
+  border: 3px solid #1266f1;
+}
+
+.inset {
+  font-size: 1.5rem;
+  background: -webkit-linear-gradient(top, #666, #666);
+  /* so it doesn't show on non-webkit browsers */
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  color: #666;
+  text-shadow: rgba(255, 255, 255, 0.5) 4px 4px 3px;
+  transition: all 0.5s ease;
+}
+
+.outset {
+  font-size: 1.5rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  color: #666;
+  box-shadow: gray 2px 2px 16px;
+  transition: all 0.5s ease;
+}
