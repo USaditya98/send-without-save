@@ -5,7 +5,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title>Simple Card Generator</title>
+        <title>Send Without Save</title>
         <link rel="icon" href="" type="image/x-icon" />
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
@@ -26,8 +26,9 @@
                     <label class="form-label fs-3" for="formControlLg">Send Without Save</label>
                 </div>
                 <div class="form-outline mx-4 mt-2">
-                    <input type="text" id="contactNumber" class="form-control form-control-lg" />
+                    <input type="text" id="contactNumber" class="form-control form-control-lg" pattern="[1-9]{1}[0-9]{9}" maxlength="10" onchange="<script>numberError = false;</script>" />
                     <label class="form-label" for="contactNumber">Enter Mobile Number</label>
+                    <p id="error"></p>
                 </div>
                 <div class="form-outline   mx-4 mt-4  ">
                     <textarea class="form-control" id="messageArea" rows="4"></textarea>
@@ -51,20 +52,21 @@
         <!-- Custom scripts -->
         <script type="text/javascript">
             document.getElementById('send').addEventListener('click', function() {
-                        let number = document.getElementById('contactNumber').value;
-                        let message = document.getElementById('messageArea').value;
-                        var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-                        if ((inputtxt.value.match(phoneno)) {
-                                return true;
-                            }
-                            if (number.length < 9 || number.length > 9) {
-                                var numberError = true
-                            } else {
-                                window.location = 'https://api.WhatsApp.com/send?phone=' + number;
-
-                            }
-
-                        });
+                let number = document.getElementById('contactNumber');
+                let message = document.getElementById('messageArea').value;
+                var numberError = false;
+                var phoneno = /^[6-9]\d{9}$/;
+                let matchNumber = number.value.match(phoneno);
+                if (matchNumber) {
+                    // alert(matchNumber);
+                    window.location = 'https://wa.me/' + matchNumber + '?text=' + message;
+                    numberError = false;
+                } else {
+                    alert('invalid number');
+                    // document.getElementById('error').append("Invalid Number");
+                    // numberError = true;
+                }
+            });
         </script>
     </body>
 
