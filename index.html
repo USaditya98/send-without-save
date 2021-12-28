@@ -34,9 +34,13 @@
                     <textarea class="form-control" id="messageArea" rows="4"></textarea>
                     <label class="form-label" for="messageArea">Message</label>
                 </div>
+                <div class="form-outline   mx-4 mt-4  ">
+                    <input class="form-control" id="count" value="0">
+                    <label class="form-label" for="count">Message Count</label>
+                </div>
                 <div class="d-flex   mx-4 mt-4 justify-content-center my-5">
                     <button type="button" id="send" class="btn btn-success mx-4">Send</button>
-                    <button type="button" id="cancel" class="btn btn-danger mx-4">Cancel</button>
+                    <button type="reset" id="cancel" class="btn btn-danger mx-4">Cancel</button>
                 </div>
             </div>
         </div>
@@ -51,15 +55,24 @@
         <script type="text/javascript" src="js/mdb.min.js"></script>
         <!-- Custom scripts -->
         <script type="text/javascript">
+            var arrayMessage = [];
             document.getElementById('send').addEventListener('click', function() {
                 let number = document.getElementById('contactNumber');
                 let message = document.getElementById('messageArea').value;
+                let count = document.getElementById('count').value;
+                for (var i = 0; i <= count; i++) {
+                    arrayMessage.push(message);
+                }
+                console.log(arrayMessage);
                 var numberError = false;
                 var phoneno = /^[6-9]\d{9}$/;
                 let matchNumber = number.value.match(phoneno);
                 if (matchNumber) {
-                    // alert(matchNumber);
-                    window.location = 'https://wa.me/+91' + matchNumber + '?text=' + message;
+                    // const contactId = matchNumber.includes('@s.whatsapp.net') ? matchNumber.trim() : matchNumber.trim() + '@s.whatsapp.net'
+                    // alert(contactId);
+                    // window.location = 'https://web.whatsapp.com/send?phone=' + matchNumber + '&text&app_absent=0';
+
+                    // window.location = 'https://wa.me/+91' + matchNumber + '?text=' + message;
                     numberError = false;
                 } else {
                     alert('invalid number');
